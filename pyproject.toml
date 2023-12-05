@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fast-food-classifier"
+version = "0.1.0"
+description = "Train a sentiment classifier that is specific to Burger King or Wendys"
+authors = ["Brandwatch"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+jupyterlab = "*"
+typer = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = "*"
+pylint = "*"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
