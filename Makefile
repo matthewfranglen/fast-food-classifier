@@ -7,10 +7,6 @@
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME = fast-food-classifier
 
-AWS_BUCKET = [OPTIONAL] your bucket and folder for s3, as you would use it with the aws cli. Do not include a trailing / in the url. For example s3://foo/bar
-# use AWS_DEFAULT_PROFILE to change the profile used
-PYTHONPATH = $(CURDIR)
-
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
@@ -24,21 +20,6 @@ edit: .make/requirements
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
-
-## Make Dataset
-data: .make/requirements
-	PYTHONPATH=$(PYTHONPATH) \
-		poetry run python -m src.data.make_dataset data/raw data/processed
-
-## Upload Data to S3
-s3/upload:
-	aws s3 sync data/ $(AWS_BUCKET)/data/
-	aws s3 sync models/ $(AWS_BUCKET)/models/
-
-## Download Data from S3
-s3/download:
-	aws s3 sync $(AWS_BUCKET)/data/ data/
-	aws s3 sync $(AWS_BUCKET)/models/ models/
 
 ## Install Python Dependencies
 requirements: .make/requirements
