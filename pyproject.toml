@@ -8,6 +8,8 @@ authors = ["Brandwatch"]
 python = "^3.11"
 
 jupyterlab = "*"
+torch = "^2.1.1"
+transformers = "^4.35.2"
 typer = "*"
 
 [tool.poetry.group.dev.dependencies]
