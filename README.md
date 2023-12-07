@@ -122,37 +122,6 @@ Project Organization
         └── visualization  <- Scripts to create exploratory and results oriented visualizations
             └── visualize.py
 
-Poetry Installation and Usage
------------------------------
-
-This uses [poetry](https://poetry.eustace.io/docs/) as the package manager.
-You can install it by following the instructions [here](https://poetry.eustace.io/docs/#installation).
-I recommend using [pipx](https://pipxproject.github.io/pipx/) to install it, which requires installing pipx:
-
-```
-pip install --user pipx
-pipx install poetry
-```
-
-Poetry uses automatically managed virtual environments.
-This template already has a pyproject.toml file so to create such an environment and install the dependencies you just need to run:
-```
-make requirements
-```
-
-You can install new packages with the command:
-```
-poetry install DEPENDENCY
-```
-This will record the changes in the pyproject.toml and poetry.lock files, so remember to commit them.
-
-You can run commands directly in the virtual environment without activating it.
-This is done by adding the `poetry run` prefix to your command, for example:
-```
-poetry run python -c 'print("Hello, World!")'
-```
-Invoking commands in this way means you will not change the virtual environment accidentally.
-
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
