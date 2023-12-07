@@ -3,6 +3,11 @@ Fast Food Sentiment Classifier
 
 Train a sentiment classifier that is specific to Burger King or Wendys.
 
+The datasets are in `data/raw/burger-king.csv` and `data/raw/wendys.csv`.
+These have title, text and sentiment columns and no row appears more than once (the _text_ column IS repeated).
+
+An example of using a dataset to train a model can be found in `notebooks/01-mf-example-sentiment-train.ipynb`.
+
 Using this project
 ------------------
 
